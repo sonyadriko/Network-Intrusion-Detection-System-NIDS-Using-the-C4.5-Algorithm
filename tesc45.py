@@ -8,17 +8,19 @@ import graphviz
 import pandas as pd
 
 # Data yang diberikan
-data = {
-    'no.': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-    'service': ['http', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'http', 'ftp', 'http', 'ftp', 'http', 'http', 'dns', 'http', 'dns', 'dns'],
-    'spkts': [10.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 8.0, 12.0, 10.0, 14.0, 10.0, 42.0, 2.0, 10.0, 2.0, 2.0],
-    'sbytes': [776.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 132.0, 1028.0, 572.0, 826.0, 756.0, 766.0, 47218.0, 114.0, 830.0, 114.0, 114.0],
-    'sttl': [62.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 31.0, 31.0, 254.0, 62.0, 254.0, 62.0, 254.0, 254.0, 62.0, 254.0, 254.0],
-    'smean': [78.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 66.0, 129.0, 48.0, 83.0, 54.0, 77.0, 1124.0, 57.0, 83.0, 57.0, 57.0],
-    'attack_cat': ['Exploits', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Normal', 'Normal', 'Normal', 'Normal', 'Fuzzers', 'Exploits', 'Exploits', 'Generic', 'Exploits', 'Generic', 'Generic']
-}
+# data = {
+#     'no.': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+#     'service': ['http', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'dns', 'http', 'ftp', 'http', 'ftp', 'http', 'http', 'dns', 'http', 'dns', 'dns'],
+#     'spkts': [10.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 8.0, 12.0, 10.0, 14.0, 10.0, 42.0, 2.0, 10.0, 2.0, 2.0],
+#     'sbytes': [776.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 114.0, 132.0, 1028.0, 572.0, 826.0, 756.0, 766.0, 47218.0, 114.0, 830.0, 114.0, 114.0],
+#     'sttl': [62.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 254.0, 31.0, 31.0, 254.0, 62.0, 254.0, 62.0, 254.0, 254.0, 62.0, 254.0, 254.0],
+#     'smean': [78.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 57.0, 66.0, 129.0, 48.0, 83.0, 54.0, 77.0, 1124.0, 57.0, 83.0, 57.0, 57.0],
+#     'attack_cat': ['Exploits', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Generic', 'Normal', 'Normal', 'Normal', 'Normal', 'Fuzzers', 'Exploits', 'Exploits', 'Generic', 'Exploits', 'Generic', 'Generic']
+# }
 
-df = pd.DataFrame(data)
+df = pd.read_excel('data20.xlsx')
+
+# df = pd.DataFrame(data)
 
 # Mengubah data kategorikal menjadi numerik
 df_encoded = pd.get_dummies(df[['service']], prefix=['service'])
