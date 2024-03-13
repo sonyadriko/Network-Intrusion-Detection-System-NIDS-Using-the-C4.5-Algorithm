@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<sbytes &le; 122.0<br/>entropy = 1.671<br/>samples = 20<br/>value = [1, 2, 1, 12, 4]<br/>class = Generic>, fillcolor="#9e9cf2"] ;
+1 [label=<entropy = 0.0<br/>samples = 12<br/>value = [0, 0, 0, 12, 0]<br/>class = Generic>, fillcolor="#3c39e5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<spkts &le; 9.0<br/>entropy = 1.75<br/>samples = 8<br/>value = [1, 2, 1, 0, 4]<br/>class = Normal>, fillcolor="#f6bdea"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label=<smean &le; 84.5<br/>entropy = 0.811<br/>samples = 4<br/>value = [1, 0, 0, 0, 3]<br/>class = Normal>, fillcolor="#ee7bd5"] ;
+2 -> 3 ;
+4 [label=<entropy = 0.0<br/>samples = 3<br/>value = [0, 0, 0, 0, 3]<br/>class = Normal>, fillcolor="#e539c0"] ;
+3 -> 4 ;
+5 [label=<entropy = 0.0<br/>samples = 1<br/>value = [1, 0, 0, 0, 0]<br/>class = DoS>, fillcolor="#e58139"] ;
+3 -> 5 ;
+6 [label=<smean &le; 58.0<br/>entropy = 1.5<br/>samples = 4<br/>value = [0, 2, 1, 0, 1]<br/>class = Exploits>, fillcolor="#d3f6bd"] ;
+2 -> 6 ;
+7 [label=<entropy = 0.0<br/>samples = 1<br/>value = [0, 0, 1, 0, 0]<br/>class = Fuzzers>, fillcolor="#39e5c5"] ;
+6 -> 7 ;
+8 [label=<sbytes &le; 712.0<br/>entropy = 0.918<br/>samples = 3<br/>value = [0, 2, 0, 0, 1]<br/>class = Exploits>, fillcolor="#bdf29c"] ;
+6 -> 8 ;
+9 [label=<entropy = 0.0<br/>samples = 1<br/>value = [0, 1, 0, 0, 0]<br/>class = Exploits>, fillcolor="#7be539"] ;
+8 -> 9 ;
+10 [label=<smean &le; 323.0<br/>entropy = 1.0<br/>samples = 2<br/>value = [0, 1, 0, 0, 1]<br/>class = Exploits>, fillcolor="#ffffff"] ;
+8 -> 10 ;
+11 [label=<entropy = 0.0<br/>samples = 1<br/>value = [0, 0, 0, 0, 1]<br/>class = Normal>, fillcolor="#e539c0"] ;
+10 -> 11 ;
+12 [label=<entropy = 0.0<br/>samples = 1<br/>value = [0, 1, 0, 0, 0]<br/>class = Exploits>, fillcolor="#7be539"] ;
+10 -> 12 ;
+}
